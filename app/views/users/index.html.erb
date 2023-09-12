@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'style', 'index', medis: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="index_container">
+  <h1>Users</h1>
+
+  <div>
+    <% @users.each do |user| %>
+      <% if current_user == user %>
+        <div style="display: flex;">
+          <div style="width: 160px;">User: <%= user.name %></div>
+          <div><%= button_to "show", user_path(user), method: :get %></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to "New Users", new_user_path %>
+
+  <% if user_signed_in? %>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <% end %>
+<div>

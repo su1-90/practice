@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag 'style', 'new_tasks', medis: 'all', 'data-turbolinks': 'reload' %>
+
+<div class="new_tasks_contaner">
+  <h1>New Task</h1>
+
+  <%= form_with(model: @task) do |form| %>
+    <div><%= form.label :user_name %></div>
+    <div><%= form.text_field :user_name %></div>
+    <div><%= form.label :content %></div>
+    <div><%= form.text_area :content %></div>
+    <div><%= form.submit %></div>
+  <% end %>
+  <%= link_to "Back to tasks", tasks_path %>
+</div>

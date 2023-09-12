@@ -1,0 +1,41 @@
+.session-form {
+    background-color: #645e5e;
+  }
+  
+  .title {
+    display: inline-block;
+    margin: 25px;
+    font-size: 35px;
+  }
+  
+  body {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .login_form_container {
+    width: 300px;
+    margin-top: 90px;
+  }
+  
+  .login_form {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .icon {
+    width: 30px;
+    height: auto;
+    margin-right: 16px;
+  }
+  
+  .login_help {
+    display: flex;
+    flex-flow: column;
+  }

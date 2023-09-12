@@ -1,0 +1,48 @@
+<%= stylesheet_link_tag 'style', 'edit', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<% content_for :title, "Edit User" %>
+
+<div class="edit_container">
+  <h2>ユーザー情報編集</h2>
+
+  <%= form_for(@user, url: registration_path(@user), html: { method: :put }) do |f| %>
+    <ul class="form_list">
+      <li class="form_group">
+        <div class="form_spacing">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
+      </li>
+
+      <li class="form_group">
+        <div class="form_spacing">
+          <%= f.label :email %>
+          <%= f.email_field :email %>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="form_list">
+      <li class="form_group">
+        <div class="form-spacing">
+          <%= f.label :新しいパスワード %>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+      </li>
+
+      <li class="form_group">
+        <div class="form_spacing">
+          <%= f.label :現在のパスワード %>
+          <%= f.password_field :current_password, autocomplete: "off" %>
+        </div>
+      </li>
+    </ul>
+
+    <%= f.submit "Update" %>
+  <% end %>
+
+  <%= button_to "Delete Account", registration_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
+  
+  <!-- CSSクラスを使用して「ユーザー一覧に戻る」リンクをスタイリング -->
+  <%= link_to "ユーザー一覧に戻る", users_path, class: "back-link" %>
+</div>
